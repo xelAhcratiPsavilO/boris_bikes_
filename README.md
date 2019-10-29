@@ -46,7 +46,7 @@ Objects  | Messages
 ------------- | -------------
 Person  |
 DockingStation  | release_bike
-DockingStation  | dock_bike
+DockingStation  | dock(Bike)
 DockingStation  | bike
 Bike  | working?
 
@@ -55,7 +55,7 @@ Bike  | working?
 ```
 CLASS               -->  METHOD           -->  OUTPUT
 DockingStation      -->  release_bike     -->  Bike.new
-DockingStation      -->  doc_bike         -->  void
+DockingStation      -->  doc(Bike)        -->  Bike
 DockingStation      -->  bike             -->  Bike
 Bike                -->  working?         -->  boolean
 ```
