@@ -2,6 +2,8 @@ require_relative 'bike'
 
 class DockingStation
 
+  CAPACITY = 3
+
   def initialize
     @bikes = []
   end
@@ -14,6 +16,7 @@ class DockingStation
   end
 
   def dock(bike)
+    fail 'station full' if @bikes.size == CAPACITY
     @bikes << bike
   end
 end
