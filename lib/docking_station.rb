@@ -35,11 +35,7 @@ class DockingStation
   end
 
   def order(bike)
-    if bike.working?
-      bikes << bike
-    else
-      bikes.unshift(bike)
-    end
+    bike.working? ? bikes << bike : bikes.unshift(bike)
   end
 
 end
