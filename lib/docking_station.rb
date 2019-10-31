@@ -17,7 +17,7 @@ class DockingStation
 
   def dock(bike)
     fail 'station full' if full?
-    order(bike)
+    sort(bike)
   end
 
   private
@@ -34,7 +34,7 @@ class DockingStation
     bikes[-1].working? == false
   end
 
-  def order(bike)
+  def sort(bike)
     bike.working? ? bikes << bike : bikes.unshift(bike)
   end
 
