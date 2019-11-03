@@ -82,6 +82,12 @@ So that I can manage broken bikes and not disappoint users,
 I'd like docking stations to accept returning bikes (broken or not).
 ```
 
+```
+As a maintainer of the system,
+So that I can manage broken bikes and not disappoint users,
+I'd like vans to take broken bikes from docking stations and deliver them to garages to be fixed.
+```
+
 ### Functional Representation
 
 Objects  | Messages
@@ -92,14 +98,19 @@ DockingStation  | dock(Bike)
 DockingStation  | bike
 Bike  | working?
 Bike  | report_broken
+Van  | take_broken_bikes_from(DockingStation)
+Van  | deliver_broken_bikes_to(Garage)
+Garage  |
 
 ### Diagram
 
 ```
-CLASS               -->  METHOD           -->  OUTPUT
-DockingStation      -->  release_bike     -->  Bike.new
-DockingStation      -->  doc(Bike)        -->  Bike
-DockingStation      -->  bike             -->  Bike
-Bike                -->  working?         -->  boolean
-Bike                -->  report_broken    -->  false
+CLASS               -->  METHOD                                 -->  OUTPUT
+DockingStation      -->  release_bike                           -->  Bike.new
+DockingStation      -->  doc(Bike)                              -->  Bike
+DockingStation      -->  bike                                   -->  Bike
+Bike                -->  working?                               -->  boolean
+Bike                -->  report_broken                          -->  false
+Van                 -->  take_broken_bikes_from(DockingStation) -->  []
+Van                 -->  deliver_broken_bikes_to(Garage)        -->  []
 ```
