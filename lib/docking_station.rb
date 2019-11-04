@@ -7,7 +7,7 @@ class DockingStation
     @capacity = capacity
   end
 
-  attr_reader :bikes, :capacity
+  attr_accessor :bikes, :capacity
 
   def release_bike
     fail 'no bikes available' if empty?
