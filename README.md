@@ -116,13 +116,13 @@ Garage  |  fix([bike1, bike2])
 ```
 CLASS               -->  METHOD                                   -->  OUTPUT
 DockingStation      -->  release_bike                             -->  Bike
-DockingStation      -->  doc(Bike)                                -->  Bike
+DockingStation      -->  doc(Bike)                                -->  [Bike1, Bike2]
 DockingStation      -->  bike                                     -->  Bike
 Bike                -->  working?                                 -->  boolean
 Bike                -->  report_broken                            -->  false
-Van                 -->  take_broken_bikes_from(DockingStation)   -->  Bike
+Van                 -->  take_broken_bikes_from(DockingStation)   -->  [Bike1, Bike2]
 Van                 -->  deliver_broken_bikes_to(Garage)          -->  Bike
-Van                 -->  take_working_bikes_from(Garage)          -->  Bike
+Van                 -->  take_working_bikes_from(Garage)          -->  [Bike1, Bike2]
 Van                 -->  deliver_working_bikes_to(DockingStation) -->  Bike
 Garage              -->  store(Bike)                              -->  Bike
 Garage              -->  fix(bikes)                               -->  [Bike1, Bike2]
