@@ -13,4 +13,8 @@ class Van
   def take_broken_bikes_from(docking_station)
     docking_station.bikes.each { |bike| bike.working? ? break : (broken_bikes << bike; docking_station.bikes.delete(bike)) }
   end
+
+  def deliver_broken_bikes_to(garage)
+    broken_bikes.each { |bike| garage.bikes << bike; broken_bikes.delete(bike) }
+  end
 end

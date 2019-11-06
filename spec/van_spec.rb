@@ -22,7 +22,10 @@ describe Van do
   end
 
   it 'delivers broken bikes to a Garage' do
-
+    subject.take_broken_bikes_from(station)
+    subject.deliver_broken_bikes_to(garage)
+    expect(subject.broken_bikes).to be_empty
+    expect(garage.bikes).to eq [broken_bike]
   end
 
 end
