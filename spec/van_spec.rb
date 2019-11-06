@@ -11,4 +11,13 @@ describe Van do
         expect(subject.broken_bikes).to eq [broken_bike]
   end
 
+  it 'can set a specific capacity when needed' do
+    van = Van.new(30)
+    expect(van.capacity).to eq 30
+  end
+
+  it 'has a default capacity' do
+    expect(subject.capacity).to eq 20
+  end
+
 end
