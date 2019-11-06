@@ -106,11 +106,11 @@ Garage  |
 
 ```
 CLASS               -->  METHOD                                 -->  OUTPUT
-DockingStation      -->  release_bike                           -->  Bike.new
+DockingStation      -->  release_bike                           -->  Bike
 DockingStation      -->  doc(Bike)                              -->  Bike
 DockingStation      -->  bike                                   -->  Bike
 Bike                -->  working?                               -->  boolean
 Bike                -->  report_broken                          -->  false
-Van                 -->  take_broken_bikes_from(DockingStation) -->  []
-Van                 -->  deliver_broken_bikes_to(Garage)        -->  []
+Van                 -->  take_broken_bikes_from(DockingStation) -->  Bike
+Van                 -->  deliver_broken_bikes_to(Garage)        -->  Bike
 ```
