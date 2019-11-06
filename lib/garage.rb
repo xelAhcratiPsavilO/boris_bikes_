@@ -7,6 +7,10 @@ class Garage
 
     attr_reader :bikes, :capacity
 
+    def fix
+      bikes.each { |bike| bike.working = true }
+    end
+
     def store(bike)
       bikes << bike
     end
