@@ -6,4 +6,8 @@ class Garage
     end
 
     attr_reader :bikes, :capacity
+
+    def store(bike)
+      bikes << bike
+    end
 end
