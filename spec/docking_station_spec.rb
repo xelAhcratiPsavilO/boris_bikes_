@@ -37,7 +37,7 @@ describe DockingStation do
     expect { subject.dock(bike) }.to raise_error 'station full'
   end
 
-  it 'sees stored bikes' do
+  it 'sees docked bikes' do
     subject.dock(bike)
     expect(subject.bikes).to eq [bike]
   end

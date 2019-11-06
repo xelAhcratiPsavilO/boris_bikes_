@@ -28,4 +28,9 @@ describe Van do
     expect(garage.bikes).to eq [broken_bike]
   end
 
+  it 'sees taken bikes' do
+    subject.take_broken_bikes_from(station)
+    expect(subject.broken_bikes).to eq [broken_bike]
+  end
+
 end
