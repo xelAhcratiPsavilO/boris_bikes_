@@ -88,6 +88,12 @@ So that I can manage broken bikes and not disappoint users,
 I'd like vans to take broken bikes from docking stations and deliver them to garages to be fixed.
 ```
 
+```
+As a maintainer of the system,
+So that I can manage broken bikes and not disappoint users,
+I'd like vans to collect working bikes from garages and distribute them to docking stations.
+```
+
 ### Functional Representation
 
 Objects  | Messages
@@ -100,17 +106,24 @@ Bike  | working?
 Bike  | report_broken
 Van  | take_broken_bikes_from(DockingStation)
 Van  | deliver_broken_bikes_to(Garage)
-Garage  |
+Van  | take_working_bikes_from(Garage)
+Van  | deliver_working_bikes_to(DockingStation)
+Garage  |  store(Bike)
+Garage  |  fix([bike1, bike2])
 
 ### Diagram
 
 ```
-CLASS               -->  METHOD                                 -->  OUTPUT
-DockingStation      -->  release_bike                           -->  Bike
-DockingStation      -->  doc(Bike)                              -->  Bike
-DockingStation      -->  bike                                   -->  Bike
-Bike                -->  working?                               -->  boolean
-Bike                -->  report_broken                          -->  false
-Van                 -->  take_broken_bikes_from(DockingStation) -->  Bike
-Van                 -->  deliver_broken_bikes_to(Garage)        -->  Bike
+CLASS               -->  METHOD                                   -->  OUTPUT
+DockingStation      -->  release_bike                             -->  Bike
+DockingStation      -->  doc(Bike)                                -->  Bike
+DockingStation      -->  bike                                     -->  Bike
+Bike                -->  working?                                 -->  boolean
+Bike                -->  report_broken                            -->  false
+Van                 -->  take_broken_bikes_from(DockingStation)   -->  Bike
+Van                 -->  deliver_broken_bikes_to(Garage)          -->  Bike
+Van                 -->  take_working_bikes_from(Garage)          -->  Bike
+Van                 -->  deliver_working_bikes_to(DockingStation) -->  Bike
+Garage              -->  store(Bike)                              -->  Bike
+Garage              -->  fix(bikes)                               -->  [Bike1, Bike2]
 ```
