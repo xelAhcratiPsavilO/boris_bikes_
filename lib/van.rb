@@ -21,6 +21,5 @@ class Van
 
   def take_working_bikes_from(garage)
     garage.bikes.each { |bike| working_bikes << bike; garage.bikes.delete(bike) }
-    working_bikes
   end
 end
