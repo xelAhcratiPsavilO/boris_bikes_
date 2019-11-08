@@ -35,7 +35,6 @@ describe Van do
 
   it 'takes fixed bikes from a Garage' do
     allow(broken_bike).to receive(:working=).and_return(@working)
-    allow(broken_bike).to receive(:working).and_return(@working)
     subject.take_broken_bikes_from(station)
     subject.deliver_broken_bikes_to(garage)
     allow(garage).to receive(:fix).and_return(broken_bike.working = true)
