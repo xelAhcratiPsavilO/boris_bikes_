@@ -1,11 +1,11 @@
 class Garage
 
+  attr_reader :bikes, :capacity
+
     def initialize(capacity = 20)
       @bikes = []
       @capacity = capacity
     end
-
-    attr_reader :bikes, :capacity
 
     def fix
       bikes.each { |bike| bike.working = true }

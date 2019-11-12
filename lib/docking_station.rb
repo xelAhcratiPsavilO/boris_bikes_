@@ -1,13 +1,15 @@
 require_relative 'bike'
+require_relative 'bike_container'
 
 class DockingStation
+  include BikeContainer
+
+  attr_reader :bikes, :capacity
 
   def initialize(capacity = 20)
     @bikes = []
     @capacity = capacity
   end
-
-  attr_reader :bikes, :capacity
 
   def release_bike
     fail 'no bikes available' if empty?
@@ -21,10 +23,6 @@ class DockingStation
   end
 
   private
-
-  def empty?
-    bikes.empty?
-  end
 
   def full?
     bikes.count >= capacity
