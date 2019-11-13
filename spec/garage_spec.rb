@@ -1,10 +1,11 @@
 require 'garage'
+require 'support/shared_examples_for_bike_container'
 
 describe Garage do
 
   it_behaves_like BikeContainer
 
-  let(:bike) { double :bike, broken?: true }
+  let(:bike) { double :bike }
 
   it 'fixes bikes' do
     subject.store(bike)
