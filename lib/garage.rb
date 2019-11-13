@@ -1,17 +1,12 @@
 class Garage
 
-  attr_reader :bikes, :capacity
-
-    def initialize(capacity = 20)
-      @bikes = []
-      @capacity = capacity
-    end
+  include BikeContainer
 
     def fix
-      bikes.each { |bike| bike.working = true }
+      bikes.each { |bike| bike.broken = false }
     end
 
     def store(bike)
-      bikes << bike
+      add_bike bike
     end
 end

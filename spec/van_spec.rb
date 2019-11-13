@@ -28,11 +28,6 @@ describe Van do
     expect(garage.bikes).to eq [broken_bike]
   end
 
-  it 'sees taken bikes' do
-    subject.take_broken_bikes_from(station)
-    expect(subject.broken_bikes).to eq [broken_bike]
-  end
-
   it 'takes fixed bikes from a Garage' do
     allow(broken_bike).to receive(:working=).and_return(@working)
     subject.take_broken_bikes_from(station)
