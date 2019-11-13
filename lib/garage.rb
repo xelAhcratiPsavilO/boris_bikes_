@@ -2,8 +2,8 @@ class Garage
 
   include BikeContainer
 
-    def fix
-      bikes.each { |bike| bike.broken = false }
+    def fix_bikes
+      bikes.each { |bike| bike.fix }
     end
 
     def store(bike)
